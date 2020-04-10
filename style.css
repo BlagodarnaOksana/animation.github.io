@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    perspective: 500px;
+}
+
+.sky1 {
+    
+    position: fixed;
+    height: 120vh;
+    width: 100vw;
+    background-image: url("./sky2.png");
+    background-size: 160% 100%;
+    background-repeat: repeat;
+    background-position: center top;
+    transform: scale(1, 1);
+    transform-origin: 50% 50%;
+    z-index: 0;
+    opacity:0;
+    animation: skymove 120s infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.sky2 {
+    position: fixed;
+    height: 120vh;
+    width: 100vw;
+    background-image: url("./sky2.png");
+    background-size: 160% 100%;
+    background-repeat: repeat;
+    background-position: center top;
+    transform: scale(1, 1);
+    transform-origin: 50% 50%;
+    z-index: 0;
+    opacity:0;
+    animation: skymove 120s infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 60s;
+}
+
+.water {
+    position: fixed;
+    top:32%;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("water-texture.jpg");
+    background-position: 0px 0px;
+    background-repeat: repeat; 
+    transform-style: preserve-3d;
+    transform: rotateX(100deg) scale3d(2.2,1.5,1);
+    animation: mymove 30s reverse linear infinite;
+
+}
+.trimaran{
+    position: absolute;
+    top:46%;
+    left:45%;
+    width:15%;
+    height:50%;
+    background-image: url("./tri.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transform-origin: 25% 75%;
+    animation: trimove 2s alternate infinite;
+    animation-timing-function: ease-in-out;
+}
+.trimaran1 {
+    position: fixed;
+    top:46%;
+    left:45%;
+    width:15%;
+    height:50%;
+    background-image: url("./tri1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+@keyframes mymove {
+    0% {background-position-y: 0%;}
+    100% {background-position-y: 1000%;}
+  }
+
+@keyframes trimove {
+    0% {transform: rotate(-2deg);}
+    100% {transform: rotate(-9deg);}
+  }
+
+@keyframes skymove {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    60% {opacity: 1;}
+    70% {opacity: 0;}
+    100% {
+        opacity: 0;
+        transform: scale(3, 2);}  
+}
+
+.frame {
+    position: fixed;
+    box-sizing: border-box;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: 40px solid red;
+    border-image: url(./border1.png) 60 round;
+    z-index: 2;
+}
+
+.content {
+    position: fixed;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-family: sans-serif;
+    text-shadow: indigo;
+    color: teal;
+    z-index: 3;
+    height: 10%;
+}
+.subcont {
+    font-size: 30px;
+    color: maroon;
+}
